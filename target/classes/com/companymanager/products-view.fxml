@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.companymanager.products.Products">
+    <children>
+        <TableView fx:id="table" layoutX="16.0" layoutY="123.0" prefHeight="572.0" prefWidth="1168.0">
+            <columns>
+                <TableColumn fx:id="productCode" prefWidth="151.0" text="Mã sản phẩm" />
+                <TableColumn fx:id="productName" minWidth="7.0" prefWidth="206.0" text="Tên sản phẩm" />
+                <TableColumn fx:id="description" prefWidth="328.0" text="Thông tin" />
+                <TableColumn fx:id="quantityInStock" prefWidth="143.0" text="Số lượng" />
+                <TableColumn fx:id="buyPrice" prefWidth="170.0" text="Giá mua" />
+                <TableColumn fx:id="sellPrice" prefWidth="169.0" text="Giá bán" />
+            </columns>
+        </TableView>
+        <Button layoutX="916.0" layoutY="79.0" mnemonicParsing="false" onAction="#add" prefHeight="31.0" prefWidth="76.0" text="Thêm" />
+        <Button layoutX="1007.0" layoutY="79.0" mnemonicParsing="false" onAction="#edit" prefHeight="31.0" prefWidth="76.0" text="Sửa" />
+        <Button layoutX="1096.0" layoutY="79.0" mnemonicParsing="false" onAction="#delete" prefHeight="31.0" prefWidth="76.0" text="Xóa" />
+        <Button layoutX="27.0" layoutY="79.0" mnemonicParsing="false" onAction="#exit" prefHeight="31.0" prefWidth="76.0" text="Quay lại" />
+        <Label layoutX="423.0" layoutY="25.0" text="Danh mục sản phẩm">
+            <font>
+                <Font name="System Bold" size="37.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

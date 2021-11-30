@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1200.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.companymanager.customers.Customers">
+    <children>
+        <TableView fx:id="table" layoutX="16.0" layoutY="123.0" prefHeight="572.0" prefWidth="1168.0">
+            <columns>
+                <TableColumn fx:id="ssn" prefWidth="134.0" text="SSN" />
+                <TableColumn fx:id="name" minWidth="7.0" prefWidth="199.0" text="Họ và tên" />
+                <TableColumn fx:id="dob" prefWidth="153.0" text="Ngày sinh" />
+                <TableColumn fx:id="phone" prefWidth="141.0" text="Số điện thoại" />
+                <TableColumn fx:id="email" prefWidth="168.0" text="Email" />
+                <TableColumn fx:id="address" prefWidth="256.0" text="Địa chỉ" />
+            <TableColumn fx:id="total" prefWidth="116.0" text="Chi tiêu" />
+            </columns>
+        </TableView>
+        <Button layoutX="916.0" layoutY="79.0" mnemonicParsing="false" onAction="#add" prefHeight="31.0" prefWidth="76.0" text="Thêm">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font></Button>
+        <Button layoutX="1007.0" layoutY="79.0" mnemonicParsing="false" onAction="#edit" prefHeight="31.0" prefWidth="76.0" text="Sửa">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font></Button>
+        <Button layoutX="1096.0" layoutY="79.0" mnemonicParsing="false" onAction="#delete" prefHeight="31.0" prefWidth="76.0" text="Xóa">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font></Button>
+        <Button layoutX="27.0" layoutY="79.0" mnemonicParsing="false" onAction="#exit" prefHeight="31.0" prefWidth="76.0" text="Quay lại">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font></Button>
+        <Label layoutX="406.0" layoutY="34.0" text="Danh sách khách hàng">
+            <font>
+                <Font name="Times New Roman Bold" size="40.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

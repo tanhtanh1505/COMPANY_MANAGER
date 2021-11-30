@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1200.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.companymanager.employees.EditEmployee">
+   <children>
+      <TextField fx:id="ssn" layoutX="378.0" layoutY="127.0" prefHeight="31.0" prefWidth="745.0" />
+      <TextField fx:id="name" layoutX="378.0" layoutY="201.0" prefHeight="31.0" prefWidth="745.0" />
+      <TextField fx:id="phone" layoutX="378.0" layoutY="360.0" prefHeight="31.0" prefWidth="745.0" />
+      <TextField fx:id="email" layoutX="378.0" layoutY="442.0" prefHeight="31.0" prefWidth="745.0" />
+      <TextField fx:id="address" layoutX="378.0" layoutY="525.0" prefHeight="31.0" prefWidth="745.0" />
+      <TextField fx:id="role" layoutX="378.0" layoutY="601.0" prefHeight="31.0" prefWidth="745.0" />
+      <Text layoutX="551.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hồ sơ">
+         <font>
+            <Font name="Times New Roman Bold" size="40.0" />
+         </font>
+      </Text>
+      <Text layoutX="72.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số chứng minh thư/ CCCD">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="221.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Họ và tên">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="217.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày sinh">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Text>
+      <DatePicker fx:id="dob" layoutX="382.0" layoutY="280.0" prefHeight="31.0" prefWidth="745.0" />
+      <Label layoutX="192.0" layoutY="364.0" text="Số điện thoại">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="244.0" layoutY="446.0" text="E-mail">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="241.0" layoutY="529.0" text="Địa chỉ">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="231.0" layoutY="605.0" text="Chức vụ">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="544.0" layoutY="660.0" mnemonicParsing="false" onAction="#submit" prefHeight="31.0" prefWidth="112.0" text="Xác nhận">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font></Button>
+      <Button layoutX="1054.0" layoutY="69.0" mnemonicParsing="false" onAction="#exit" prefHeight="31.0" prefWidth="73.0" text="Hủy">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

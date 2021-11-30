@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1200.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.companymanager.products.EditProduct">
+    <children>
+        <TextField fx:id="productCode" layoutX="378.0" layoutY="127.0" prefHeight="31.0" prefWidth="745.0" />
+        <TextField fx:id="productName" layoutX="378.0" layoutY="185.0" prefHeight="31.0" prefWidth="745.0" />
+        <TextField fx:id="quantityInStock" layoutX="378.0" layoutY="244.0" prefHeight="31.0" prefWidth="745.0" />
+        <TextField fx:id="buyPrice" layoutX="378.0" layoutY="310.0" prefHeight="31.0" prefWidth="745.0" />
+        <TextField fx:id="sellPrice" layoutX="378.0" layoutY="378.0" prefHeight="31.0" prefWidth="745.0" />
+        <Text layoutX="428.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thông tin sản phẩm">
+            <font>
+                <Font name="Times New Roman Bold" size="40.0" />
+            </font>
+        </Text>
+        <Text layoutX="186.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mã sản phẩm">
+            <font>
+                <Font name="Times New Roman Bold" size="20.0" />
+            </font>
+        </Text>
+        <Text layoutX="183.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên sản phẩm">
+            <font>
+                <Font name="Times New Roman Bold" size="20.0" />
+            </font>
+        </Text>
+        <Text layoutX="225.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số lượng">
+            <font>
+                <Font name="Times New Roman Bold" size="20.0" />
+            </font>
+        </Text>
+        <Label layoutX="226.0" layoutY="314.0" text="Giá mua">
+            <font>
+                <Font name="Times New Roman Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="229.0" layoutY="382.0" text="Giá bán">
+            <font>
+                <Font name="Times New Roman Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="155.0" layoutY="444.0" text="Thông tin chi tiết">
+            <font>
+                <Font name="Times New Roman Bold" size="20.0" />
+            </font>
+        </Label>
+        <Button layoutX="544.0" layoutY="660.0" mnemonicParsing="false" onAction="#submit" prefHeight="31.0" prefWidth="112.0" text="Xác nhận">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font></Button>
+        <Button layoutX="1054.0" layoutY="69.0" mnemonicParsing="false" onAction="#exit" prefHeight="31.0" prefWidth="73.0" text="Hủy">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font></Button>
+      <TextArea fx:id="description" layoutX="378.0" layoutY="444.0" prefHeight="180.0" prefWidth="745.0" />
+    </children>
+</AnchorPane>

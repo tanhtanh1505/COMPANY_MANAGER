@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.18384401114206128" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.companymanager.Notice.NoticeController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="135.0" prefWidth="1198.0" style="-fx-background-color: #312a60;">
+         <children>
+            <Label layoutX="498.0" layoutY="40.0" text="Thông báo" textFill="#ebeaea">
+               <font>
+                  <Font name="Times New Roman Bold" size="44.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #E6E6FA;">
+         <children>
+            <Separator layoutX="266.0" orientation="VERTICAL" prefHeight="582.0" prefWidth="0.0" />
+            <ComboBox fx:id="selectSendMode" layoutX="48.0" layoutY="15.0" prefHeight="31.0" prefWidth="167.0" />
+            <TextField fx:id="sentTo" layoutX="410.0" layoutY="58.0" prefHeight="31.0" prefWidth="746.0" />
+            <TextField fx:id="subject" layoutX="410.0" layoutY="126.0" prefHeight="31.0" prefWidth="746.0" />
+            <TextArea fx:id="content" layoutX="410.0" layoutY="185.0" prefHeight="314.0" prefWidth="746.0" />
+            <Button layoutX="733.0" layoutY="525.0" mnemonicParsing="false" onAction="#send" prefHeight="31.0" prefWidth="100.0" text="Gửi">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font></Button>
+            <Label layoutX="344.0" layoutY="62.0" text="Đến:">
+               <font>
+                  <Font name="Times New Roman" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="321.0" layoutY="130.0" text="Tiêu đề:">
+               <font>
+                  <Font name="Times New Roman" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="307.0" layoutY="174.0" text="Nội dung:">
+               <font>
+                  <Font name="Times New Roman" size="20.0" />
+               </font>
+            </Label>
+            <ListView fx:id="listName" layoutX="20.0" layoutY="126.0" onMouseClicked="#selectName" prefHeight="431.0" prefWidth="222.0" />
+            <TextField fx:id="findNameE" layoutX="48.0" layoutY="73.0" onKeyTyped="#findName" />
+            <Button layoutX="1127.0" layoutY="13.0" mnemonicParsing="false" onAction="#exit" prefHeight="23.0" prefWidth="59.0" text="Hủy">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font></Button>
+         </children></AnchorPane>
+  </items>
+</SplitPane>

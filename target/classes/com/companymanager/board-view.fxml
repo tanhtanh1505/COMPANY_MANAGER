@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.18523676880222842" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.companymanager.Board">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="119.0" prefWidth="1198.0" style="-fx-background-color: #312a60;">
+         <children>
+            <Label layoutX="355.0" layoutY="30.0" text="COMPANY MANAGER" textFill="#dddddd">
+               <font>
+                  <Font name="System Bold" size="47.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="578.0" prefWidth="1198.0" style="-fx-background-color: #E6E6FA;">
+         <children>
+            <Button layoutX="181.0" layoutY="204.0" mnemonicParsing="false" onAction="#employeeBtn" prefHeight="63.0" prefWidth="320.0" text="Nhân viên" />
+            <Button layoutX="724.0" layoutY="84.0" mnemonicParsing="false" onAction="#orderBtn" prefHeight="63.0" prefWidth="320.0" text="Đơn hàng" />
+            <Button layoutX="724.0" layoutY="204.0" mnemonicParsing="false" onAction="#customerBtn" prefHeight="63.0" prefWidth="320.0" text="Khách hàng" />
+            <Button layoutX="181.0" layoutY="326.0" mnemonicParsing="false" onAction="#productBtn" prefHeight="63.0" prefWidth="320.0" text="Sản phẩm" />
+            <Button layoutX="724.0" layoutY="326.0" mnemonicParsing="false" onAction="#noticeBtn" prefHeight="63.0" prefWidth="320.0" text="Thông báo" />
+            <Button layoutX="181.0" layoutY="438.0" mnemonicParsing="false" onAction="#settingBtn" prefHeight="63.0" prefWidth="320.0" text="Cài đặt" />
+            <Button layoutX="724.0" layoutY="438.0" mnemonicParsing="false" onAction="#logoutBtn" prefHeight="63.0" prefWidth="320.0" text="Đăng xuất" />
+            <Button layoutX="181.0" layoutY="84.0" mnemonicParsing="false" onAction="#infoUser" prefHeight="63.0" prefWidth="320.0" text="Thống kê" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>

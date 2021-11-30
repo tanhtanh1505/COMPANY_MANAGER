@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1200.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.companymanager.orders.EditOrder">
+    <children>
+        <TextField fx:id="orderNumber" layoutX="378.0" layoutY="127.0" prefHeight="31.0" prefWidth="745.0" />
+        <TextField fx:id="comment" layoutX="378.0" layoutY="525.0" prefHeight="31.0" prefWidth="745.0" />
+        <TextField fx:id="customerNumber" layoutX="378.0" layoutY="601.0" prefHeight="31.0" prefWidth="745.0" />
+        <Text layoutX="431.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thông tin đơn hàng">
+            <font>
+                <Font name="Times New Roman Bold" size="40.0" />
+            </font>
+        </Text>
+        <Text layoutX="202.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mã đơn hàng">
+            <font>
+                <Font name="Times New Roman Bold" size="20.0" />
+            </font>
+        </Text>
+        <Text layoutX="237.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày đặt">
+            <font>
+                <Font name="Times New Roman Bold" size="20.0" />
+            </font>
+        </Text>
+        <Text layoutX="167.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày giao dự kiến">
+            <font>
+                <Font name="Times New Roman Bold" size="20.0" />
+            </font>
+        </Text>
+        <DatePicker fx:id="requiredDate" layoutX="378.0" layoutY="280.0" prefHeight="31.0" prefWidth="745.0" />
+        <Label layoutX="233.0" layoutY="364.0" text="Ngày giao">
+            <font>
+                <Font name="Times New Roman Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="227.0" layoutY="446.0" text="Trạng thái">
+            <font>
+                <Font name="Times New Roman Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="245.0" layoutY="529.0" text="Ghi chú">
+            <font>
+                <Font name="Times New Roman Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="185.0" layoutY="605.0" text="Mã khách hàng">
+            <font>
+                <Font name="Times New Roman Bold" size="20.0" />
+            </font>
+        </Label>
+        <Button layoutX="544.0" layoutY="666.0" mnemonicParsing="false" onAction="#submit" prefHeight="31.0" prefWidth="112.0" text="Xác nhận">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font></Button>
+        <Button layoutX="1050.0" layoutY="78.0" mnemonicParsing="false" onAction="#exit" prefHeight="31.0" prefWidth="73.0" text="Hủy">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font></Button>
+      <DatePicker fx:id="orderDate" layoutX="378.0" layoutY="201.0" prefHeight="31.0" prefWidth="745.0" />
+      <DatePicker fx:id="shippedDate" layoutX="378.0" layoutY="360.0" prefHeight="31.0" prefWidth="745.0" />
+      <ComboBox fx:id="status" layoutX="378.0" layoutY="442.0" prefHeight="31.0" prefWidth="745.0" />
+    </children>
+</AnchorPane>
