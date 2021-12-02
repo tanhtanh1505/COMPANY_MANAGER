@@ -39,7 +39,7 @@ public class EditOrder implements Initializable {
     public void editMode(String orderN) {
         try {
             this.mode = 2;
-            orderDate.setEditable(false);
+            orderNumber.setEditable(false);
             ResultSet res = DatabaseManager.executeQuery("select * from orders where orderNumber = '" + orderN + "';");
             orderNumber.setText(orderN);
             if (res.next()) {

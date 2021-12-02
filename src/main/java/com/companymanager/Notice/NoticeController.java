@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import org.controlsfx.control.Notifications;
 
 import java.net.URL;
 import java.sql.ResultSet;
@@ -29,6 +30,8 @@ public class NoticeController implements Initializable {
     public ListView listName;
     public TextField findNameE;
 
+    private ResultSet res;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         List<String> lMode = List.of("Nhân viên", "Khách hàng", "Tất cả nhân viên", "Tất cả khách hàng");
@@ -37,7 +40,10 @@ public class NoticeController implements Initializable {
     }
 
     public void findName(KeyEvent keyEvent) throws SQLException {
-        ResultSet res = DatabaseManager.executeQuery("SELECT `name` FROM `employees` WHERE `name` LIKE '%" + findNameE.getText() + "%'");
+        if(selectSendMode.getSelectionModel().getSelectedIndex() == 0)
+            res = DatabaseManager.executeQuery("SELECT `name` FROM `employees` WHERE `name` LIKE '%" + findNameE.getText() + "%'");
+        else if(selectSendMode.getSelectionModel().getSelectedIndex() == 1)
+            res = DatabaseManager.executeQuery("SELECT `name` FROM `customers` WHERE `name` LIKE '%" + findNameE.getText() + "%'");
         ArrayList<String> lRes = new ArrayList<>();
         while (res.next()){
             lRes.add(res.getString("name"));
@@ -48,9 +54,12 @@ public class NoticeController implements Initializable {
 
     public void selectName(MouseEvent mouseEvent) throws SQLException {
         String name = listName.getSelectionModel().getSelectedItem().toString();
-        ResultSet res = DatabaseManager.executeQuery("SELECT `email` FROM `employees` WHERE `name` ='" + name + "'");
+        if(selectSendMode.getSelectionModel().getSelectedIndex() == 0)
+            res = DatabaseManager.executeQuery("SELECT `email` FROM `employees` WHERE `name` ='" + name + "'");
+        else if(selectSendMode.getSelectionModel().getSelectedIndex() == 1)
+            res = DatabaseManager.executeQuery("SELECT `email` FROM `customers` WHERE `name` ='" + name + "'");
         String listRecieveMail = "";
-        if(res.next()){
+        if(res != null && res.next()){
             listRecieveMail = listRecieveMail + res.getString("email") + ",";
         }
         sentTo.setText(sentTo.getText() + listRecieveMail);
@@ -61,7 +70,7 @@ public class NoticeController implements Initializable {
 
         if(selectSendMode.getSelectionModel().getSelectedIndex() == 2){
             //Send to all employees
-            ResultSet res = DatabaseManager.executeQuery("SELECT `email` FROM `employees`;");
+            res = DatabaseManager.executeQuery("SELECT `email` FROM `employees`;");
             String listRecieveMail = "";
             while (res.next()){
                 listRecieveMail = listRecieveMail + res.getString("email") + ",";
@@ -69,8 +78,8 @@ public class NoticeController implements Initializable {
             listEmail = listRecieveMail.split(",");
         }
         else if(selectSendMode.getSelectionModel().getSelectedIndex() == 3){
-            //Send to all employees
-            ResultSet res = DatabaseManager.executeQuery("SELECT `email` FROM `customers`;");
+            //Send to all customers
+            res = DatabaseManager.executeQuery("SELECT `email` FROM `customers`;");
             String listRecieveMail = "";
             while (res.next()){
                 listRecieveMail = listRecieveMail + res.getString("email") + ",";
@@ -81,6 +90,17 @@ public class NoticeController implements Initializable {
             listEmail = sentTo.getText().split(",");
         }
         Mail.sendToListMail(listEmail, subject.getText(), content.getText());
+        //Send to app
+        for(String le : listEmail){
+            if(selectSendMode.getSelectionModel().getSelectedIndex() == 0)
+                res = DatabaseManager.executeQuery("select ssn from employees where email ='"+le+"';");
+            if(res != null && res.next()){
+                DatabaseManager.executeUpdate("INSERT INTO `notification` (`essn`, `timeSend`, `subject`, `content`) VALUES ('"+res.getString("ssn")+"', current_timestamp(), '"+subject.getText()+"', '"+content.getText()+"');");
+            }
+        }
+        Notifications.create()
+                .text("Send notification success!")
+                .showConfirm();
     }
 
     public void exit(ActionEvent event) {

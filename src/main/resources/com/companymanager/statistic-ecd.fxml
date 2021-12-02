@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.20473537604456823" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.companymanager.statistic.StatisticECD">
+   <items>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #312a60;">
+         <children>
+            <Label layoutX="473.0" layoutY="49.0" text="Thống kê ECP" textFill="LAVENDER">
+               <font>
+                  <Font name="Times New Roman Bold" size="40.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #E6E6FA;">
+         <children>
+            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" prefHeight="11.0" prefWidth="65.0" text="Thoát">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Button>
+            <PieChart fx:id="charBestSellP" layoutX="119.0" layoutY="276.0" legendVisible="false" prefHeight="277.0" prefWidth="402.0" title="Tỉ lệ đặt sản phẩm" />
+            <PieChart fx:id="charBestInterestP" layoutX="716.0" layoutY="276.0" legendVisible="false" prefHeight="277.0" prefWidth="402.0" title="Tiền lãi 1 sản phẩm" />
+            <PieChart fx:id="chartCustomer" layoutX="119.0" layoutY="14.0" legendVisible="false" prefHeight="262.0" prefWidth="402.0" title="Chi tiêu của khách hàng" />
+            <PieChart fx:id="chartEmployee" layoutX="716.0" layoutY="14.0" legendVisible="false" prefHeight="262.0" prefWidth="402.0" title="Số lượng đơn tham gia của nhân viên" />
+         </children></AnchorPane>
+   </items>
+</SplitPane>

@@ -1,7 +1,6 @@
 package com.companymanager;
 
 import javafx.event.ActionEvent;
-import java.io.IOException;
 
 public class Board {
     public void infoUser(ActionEvent event) {
@@ -29,9 +28,10 @@ public class Board {
     }
 
     public void settingBtn(ActionEvent event) {
+        SwitchScene.to(event, "salary-view.fxml");
     }
 
     public void logoutBtn(ActionEvent event) {
-        SwitchScene.to(event, "hello-view.fxml");
+        SwitchScene.to(event, "setting-view.fxml");
     }
 }

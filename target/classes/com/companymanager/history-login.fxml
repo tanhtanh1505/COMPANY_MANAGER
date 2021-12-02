@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="368.0" prefWidth="378.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.companymanager.HistoryLogin">
+    <children>
+        <Label layoutX="141.0" layoutY="32.0" text="Lịch sử">
+            <font>
+                <Font name="Times New Roman Bold" size="30.0" />
+            </font>
+        </Label>
+      <ListView fx:id="listHistory" layoutX="66.0" layoutY="88.0" prefHeight="239.0" prefWidth="246.0" style="-fx-background-color: transparent;" />
+    </children>
+</AnchorPane>

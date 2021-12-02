@@ -17,14 +17,38 @@
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="578.0" prefWidth="1198.0" style="-fx-background-color: #E6E6FA;">
          <children>
-            <Button layoutX="181.0" layoutY="204.0" mnemonicParsing="false" onAction="#employeeBtn" prefHeight="63.0" prefWidth="320.0" text="Nhân viên" />
-            <Button layoutX="724.0" layoutY="84.0" mnemonicParsing="false" onAction="#orderBtn" prefHeight="63.0" prefWidth="320.0" text="Đơn hàng" />
-            <Button layoutX="724.0" layoutY="204.0" mnemonicParsing="false" onAction="#customerBtn" prefHeight="63.0" prefWidth="320.0" text="Khách hàng" />
-            <Button layoutX="181.0" layoutY="326.0" mnemonicParsing="false" onAction="#productBtn" prefHeight="63.0" prefWidth="320.0" text="Sản phẩm" />
-            <Button layoutX="724.0" layoutY="326.0" mnemonicParsing="false" onAction="#noticeBtn" prefHeight="63.0" prefWidth="320.0" text="Thông báo" />
-            <Button layoutX="181.0" layoutY="438.0" mnemonicParsing="false" onAction="#settingBtn" prefHeight="63.0" prefWidth="320.0" text="Cài đặt" />
-            <Button layoutX="724.0" layoutY="438.0" mnemonicParsing="false" onAction="#logoutBtn" prefHeight="63.0" prefWidth="320.0" text="Đăng xuất" />
-            <Button layoutX="181.0" layoutY="84.0" mnemonicParsing="false" onAction="#infoUser" prefHeight="63.0" prefWidth="320.0" text="Thống kê" />
+            <Button layoutX="181.0" layoutY="204.0" mnemonicParsing="false" onAction="#employeeBtn" prefHeight="63.0" prefWidth="320.0" text="Nhân viên">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font></Button>
+            <Button layoutX="724.0" layoutY="84.0" mnemonicParsing="false" onAction="#orderBtn" prefHeight="63.0" prefWidth="320.0" text="Đơn hàng">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font></Button>
+            <Button layoutX="724.0" layoutY="204.0" mnemonicParsing="false" onAction="#customerBtn" prefHeight="63.0" prefWidth="320.0" text="Khách hàng">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font></Button>
+            <Button layoutX="181.0" layoutY="326.0" mnemonicParsing="false" onAction="#productBtn" prefHeight="63.0" prefWidth="320.0" text="Sản phẩm">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font></Button>
+            <Button layoutX="724.0" layoutY="326.0" mnemonicParsing="false" onAction="#noticeBtn" prefHeight="63.0" prefWidth="320.0" text="Thông báo">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font></Button>
+            <Button layoutX="181.0" layoutY="438.0" mnemonicParsing="false" onAction="#settingBtn" prefHeight="63.0" prefWidth="320.0" text="Tính lương">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font></Button>
+            <Button layoutX="724.0" layoutY="438.0" mnemonicParsing="false" onAction="#logoutBtn" prefHeight="63.0" prefWidth="320.0" text="Cài đặt">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font></Button>
+            <Button layoutX="181.0" layoutY="84.0" mnemonicParsing="false" onAction="#infoUser" prefHeight="63.0" prefWidth="320.0" text="Thống kê">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font></Button>
          </children></AnchorPane>
   </items>
 </SplitPane>

@@ -1,4 +1,6 @@
 package com.companymanager.Notice;
+import org.controlsfx.control.Notifications;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Properties;
@@ -93,5 +95,8 @@ public class Mail {
         for(String toEmail: listEmail) {
             EmailUtil.sendEmail(session, toEmail, subject, body);
         }
+        Notifications.create()
+                .text("Success!")
+                .showInformation();
     }
 }

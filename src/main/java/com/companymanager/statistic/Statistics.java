@@ -1,5 +1,7 @@
-package com.companymanager;
+package com.companymanager.statistic;
 
+import com.companymanager.DatabaseManager;
+import com.companymanager.SwitchScene;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,6 +12,7 @@ import javafx.scene.control.DatePicker;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Statistics implements Initializable{
@@ -103,5 +106,9 @@ public class Statistics implements Initializable{
 
     public void exit(ActionEvent event) {
         SwitchScene.to(event, "board-view.fxml");
+    }
+
+    public void statisticECP(ActionEvent event) {
+        SwitchScene.to(event, "statistic-ecd.fxml");
     }
 }

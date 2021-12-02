@@ -2,6 +2,7 @@ package com.companymanager.products;
 
 import com.companymanager.DatabaseManager;
 import com.companymanager.HelloApplication;
+import com.companymanager.Mode;
 import com.companymanager.SwitchScene;
 
 import javafx.collections.FXCollections;
@@ -13,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -25,6 +27,9 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class Products implements Initializable {
+    public Button addP;
+    public Button editP;
+    public Button deleteP;
     @FXML
     TableView<TableProduct> table;
     @FXML
@@ -52,7 +57,23 @@ public class Products implements Initializable {
             buyPrice.setCellValueFactory(new PropertyValueFactory<>("buyPrice"));
             sellPrice.setCellValueFactory(new PropertyValueFactory<>("sellPrice"));
 
-            ResultSet res = DatabaseManager.getTable("products");
+            ResultSet res;
+
+            if(!Mode.forManager()){
+                addP.setDisable(true);
+                addP.setVisible(false);
+                editP.setDisable(true);
+                editP.setVisible(false);
+                deleteP.setDisable(true);
+                deleteP.setVisible(false);
+
+                String qr = "SELECT p.productCode, p.productName, p.description, p.quantityInStock, IF(p.buyPrice IS NOT NULL, '-', '-') buyPrice,\n" +
+                        "p.sellPrice FROM products p;";
+                res = DatabaseManager.executeQuery(qr);
+            }
+            else
+                res = DatabaseManager.getTable("products");
+
             while (res.next()) {
                 listView.add(new TableProduct(res.getString("productCode"), res.getString("productName"),
                         res.getString("description"), res.getString("quantityInStock"),
@@ -86,6 +107,9 @@ public class Products implements Initializable {
     }
 
     public void exit(ActionEvent event) throws IOException {
-        SwitchScene.to(event, "board-view.fxml");
+        if(Mode.forManager())
+            SwitchScene.to(event, "board-view.fxml");
+        else
+            SwitchScene.to(event, "board-for-employee.fxml");
     }
 }

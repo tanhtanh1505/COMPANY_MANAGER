@@ -2,6 +2,7 @@ package com.companymanager.orders;
 
 import com.companymanager.DatabaseManager;
 import com.companymanager.HelloApplication;
+import com.companymanager.Mode;
 import com.companymanager.SwitchScene;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -24,6 +26,12 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class Orders implements Initializable {
+    public Button addOrder;
+    public Button editOrder;
+    public Button deleteOrder;
+    private ResultSet res;
+    private String query;
+
     @FXML
     TableView<TableOrder> table;
     @FXML
@@ -54,7 +62,21 @@ public class Orders implements Initializable {
             comment.setCellValueFactory(new PropertyValueFactory<>("comment"));
             customerNumber.setCellValueFactory(new PropertyValueFactory<>("customerNumber"));
 
-            ResultSet res = DatabaseManager.getTable("orders");
+            if(!Mode.forManager()){
+                addOrder.setDisable(true);
+                addOrder.setVisible(false);
+                editOrder.setDisable(true);
+                editOrder.setVisible(false);
+                deleteOrder.setDisable(true);
+                deleteOrder.setVisible(false);
+                query = "SELECT * FROM orders o\n" +
+                        "INNER JOIN temp_orders_employees t\n" +
+                        "ON o.orderNumber = t.orderNumber\n" +
+                        "WHERE t.essn = '"+Mode.getUserLogin()+"';";
+                res = DatabaseManager.executeQuery(query);
+            }
+            else
+                res = DatabaseManager.getTable("orders");
             while (res.next()) {
                 listView.add(new TableOrder(res.getString("orderNumber"), res.getString("orderDate"),
                         res.getString("requiredDate"), res.getString("shippedDate"),
@@ -83,17 +105,20 @@ public class Orders implements Initializable {
 
     public void delete(ActionEvent event) {
         String orderNumber = table.getSelectionModel().getSelectedItem().getOrderNumber();
-        String deleteQuery = "DELETE FROM orders WHERE orderNumber = " + orderNumber + ";";
-        DatabaseManager.executeUpdate(deleteQuery);
+        query = "DELETE FROM orders WHERE orderNumber = '" + orderNumber + "';";
+        DatabaseManager.executeUpdate(query);
         table.getItems().remove(table.getSelectionModel().getSelectedItem());
     }
 
     public void exit(ActionEvent event) throws IOException {
-        SwitchScene.to(event, "board-view.fxml");
+        if(Mode.forManager())
+            SwitchScene.to(event, "board-view.fxml");
+        else
+            SwitchScene.to(event, "board-for-employee.fxml");
     }
 
     public void info(ActionEvent event) throws IOException, SQLException {
-        ResultSet res = DatabaseManager.executeQuery("select name from customers where ssn = '" + table.getSelectionModel().getSelectedItem().getCustomerNumber() + "';");
+        res = DatabaseManager.executeQuery("select name from customers where ssn = '" + table.getSelectionModel().getSelectedItem().getCustomerNumber() + "';");
         String nameCus = "";
         if(res.next()){
             nameCus = res.getString("name");

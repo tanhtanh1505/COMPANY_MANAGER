@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
@@ -8,12 +10,23 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1200.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.companymanager.HelloController">
    <children>
       <TextField fx:id="user" layoutX="460.0" layoutY="449.0" prefHeight="28.0" prefWidth="281.0" promptText="Account" />
-      <TextField fx:id="password" layoutX="460.0" layoutY="512.0" prefHeight="31.0" prefWidth="281.0" promptText="Password" />
-      <Button layoutX="549.0" layoutY="620.0" mnemonicParsing="false" onAction="#loginBtn" prefHeight="31.0" prefWidth="103.0" text="Login" />
+      <Button layoutX="549.0" layoutY="620.0" mnemonicParsing="false" onAction="#loginBtn" prefHeight="31.0" prefWidth="103.0" text="Login">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font></Button>
       <ImageView fitHeight="272.0" fitWidth="230.0" layoutX="486.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/logo.png" />
          </image>
       </ImageView>
+      <PasswordField fx:id="password" layoutX="460.0" layoutY="512.0" prefHeight="31.0" prefWidth="281.0" promptText="Password" />
+      <Label layoutX="555.0" layoutY="566.0" onMouseClicked="#forgotPassword" text="Quên mật khẩu" underline="true">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
    </children>
 </AnchorPane>

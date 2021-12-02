@@ -47,15 +47,15 @@
             <Font name="Times New Roman" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="404.0" layoutY="77.0" mnemonicParsing="false" onAction="#add" prefHeight="16.0" prefWidth="63.0" text="Thêm">
+      <Button fx:id="addProduct" layoutX="404.0" layoutY="82.0" mnemonicParsing="false" onAction="#add" prefHeight="16.0" prefWidth="63.0" text="Thêm">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Button>
-      <Button layoutX="404.0" layoutY="131.0" mnemonicParsing="false" onAction="#edit" prefHeight="15.0" prefWidth="63.0" text="Sửa">
+      <Button fx:id="editProduct" layoutX="404.0" layoutY="136.0" mnemonicParsing="false" onAction="#edit" prefHeight="15.0" prefWidth="63.0" text="Sửa">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Button>
-      <Button layoutX="404.0" layoutY="185.0" mnemonicParsing="false" onAction="#delete" prefHeight="11.0" prefWidth="63.0" text="Xóa">
+      <Button fx:id="deleteProduct" layoutX="404.0" layoutY="190.0" mnemonicParsing="false" onAction="#delete" prefHeight="11.0" prefWidth="63.0" text="Xóa">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Button>
@@ -63,5 +63,20 @@
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Button>
+      <Label fx:id="ePart" alignment="TOP_LEFT" layoutX="15.0" layoutY="349.0" prefHeight="214.0" prefWidth="175.0" text="Nhân viên thực hiện:">
+         <font>
+            <Font name="Times New Roman" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="addEBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="405.0" layoutY="242.0" lineSpacing="2.0" mnemonicParsing="false" onAction="#addEmployee" prefHeight="88.0" prefWidth="63.0" text="Thêm nhân viên" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="310.0" layoutY="28.0" mnemonicParsing="false" onAction="#exportFile" prefHeight="28.0" prefWidth="94.0" text="Xuất file">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

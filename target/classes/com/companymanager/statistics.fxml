@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<SplitPane dividerPositions="0.20473537604456823" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.companymanager.Statistics">
+<SplitPane dividerPositions="0.20473537604456823" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.companymanager.statistic.Statistics">
     <items>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #312a60;">
             <children>
@@ -28,13 +28,18 @@
                         <NumberAxis fx:id="amount" side="LEFT" />
                     </yAxis>
                 </BarChart>
-                <DatePicker fx:id="selectMonth" layoutX="135.0" layoutY="42.0" prefHeight="28.0" prefWidth="218.0" />
-            <Button layoutX="373.0" layoutY="42.0" mnemonicParsing="false" onAction="#statist" prefHeight="18.0" prefWidth="78.0" text="Thống kê">
+                <DatePicker fx:id="selectMonth" layoutX="102.0" layoutY="43.0" prefHeight="28.0" prefWidth="218.0" />
+            <Button layoutX="331.0" layoutY="45.0" mnemonicParsing="false" onAction="#statist" prefHeight="18.0" prefWidth="78.0" text="Thống kê">
                <font>
                   <Font name="Times New Roman" size="15.0" />
                </font></Button>
             <PieChart fx:id="pieChart" layoutX="54.0" layoutY="137.0" prefHeight="368.0" prefWidth="380.0" title="Đơn giao thành công" />
-            <Button layoutX="44.0" layoutY="42.0" mnemonicParsing="false" onAction="#exit" prefHeight="11.0" prefWidth="65.0" text="Thoát">
+            <Button layoutX="22.0" layoutY="44.0" mnemonicParsing="false" onAction="#exit" prefHeight="11.0" prefWidth="65.0" text="Thoát">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="422.0" layoutY="45.0" mnemonicParsing="false" onAction="#statisticECP" prefHeight="28.0" prefWidth="59.0" text="ECP">
                <font>
                   <Font name="Times New Roman" size="15.0" />
                </font>

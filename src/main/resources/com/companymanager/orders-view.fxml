@@ -21,15 +21,15 @@
                 <TableColumn fx:id="customerNumber" prefWidth="102.0" text="Mã khách hàng" />
             </columns>
         </TableView>
-        <Button layoutX="916.0" layoutY="79.0" mnemonicParsing="false" onAction="#add" prefHeight="31.0" prefWidth="76.0" text="Thêm">
+        <Button fx:id="addOrder" layoutX="824.0" layoutY="79.0" mnemonicParsing="false" onAction="#add" prefHeight="31.0" prefWidth="76.0" text="Thêm">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Button>
-        <Button layoutX="1007.0" layoutY="79.0" mnemonicParsing="false" onAction="#edit" prefHeight="31.0" prefWidth="76.0" text="Sửa">
+        <Button fx:id="editOrder" layoutX="916.0" layoutY="79.0" mnemonicParsing="false" onAction="#edit" prefHeight="31.0" prefWidth="76.0" text="Sửa">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Button>
-        <Button layoutX="1096.0" layoutY="79.0" mnemonicParsing="false" onAction="#delete" prefHeight="31.0" prefWidth="76.0" text="Xóa">
+        <Button fx:id="deleteOrder" layoutX="1007.0" layoutY="79.0" mnemonicParsing="false" onAction="#delete" prefHeight="31.0" prefWidth="76.0" text="Xóa">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Button>
@@ -42,7 +42,7 @@
                 <Font name="Times New Roman Bold" size="40.0" />
             </font>
         </Label>
-      <Button layoutX="824.0" layoutY="79.0" mnemonicParsing="false" onAction="#info" prefHeight="31.0" prefWidth="76.0" text="Chi tiết">
+      <Button layoutX="1096.0" layoutY="79.0" mnemonicParsing="false" onAction="#info" prefHeight="31.0" prefWidth="76.0" text="Chi tiết">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Button>

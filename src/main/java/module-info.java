@@ -13,6 +13,7 @@ module com.companymanager {
     requires java.sql;
     requires java.mail;
     requires activation;
+    requires java.desktop;
 
     opens com.companymanager to javafx.fxml;
     exports com.companymanager;
@@ -26,4 +27,10 @@ module com.companymanager {
     opens com.companymanager.orders to javafx.fxml;
     exports com.companymanager.products;
     opens com.companymanager.products to javafx.fxml;
+    exports com.companymanager.statistic;
+    opens com.companymanager.statistic to javafx.fxml;
+    exports com.companymanager.setting;
+    opens com.companymanager.setting to javafx.fxml;
+    exports com.companymanager.salary;
+    opens com.companymanager.salary to javafx.fxml;
 }
